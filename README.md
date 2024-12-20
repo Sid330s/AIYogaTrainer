@@ -1,7 +1,7 @@
 
 # AI Yoga Trainer: Real-Time Yoga Pose Feedback Using AI
 
-![Yoga Trainer Logo](https://github.com/Sid330s/AIYogaTrainer/blob/main/imgs/yoga.svg)  
+![Yoga Trainer Logo](https://github.com/Sid330s/AIYogaTrainer/blob/main/imgs/favicon-16x16.png)  
 
 [**Open AI Yoga Trainer App**](https://sid330s.github.io/AIYogaTrainer)  
 
