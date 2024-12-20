@@ -1,9 +1,12 @@
 
 # AI Yoga Trainer: Real-Time Yoga Pose Feedback Using AI
 
-![Yoga Trainer Logo](https://github.com/Sid330s/AIYogaTrainer/blob/main/imgs/favicon-16x16.png)  
 
-[**Open AI Yoga Trainer App**](https://sid330s.github.io/AIYogaTrainer)  
+✨ Get custom routines, track your progress, and crush your goals with AI-powered sessions. No hassle—just pure tech magic. 
+
+🔗 **[Try the AI Yoga Trainer NOW!](https://sid330s.github.io/AIYogaTrainer)** 🌟
+
+---
 
 **Authors**: Siddharth Kale, Prashil Jambhulkar, Sampatlal Jangid, Vedant Mahajan, Ganesh Bhuthkar  
 
