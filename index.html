@@ -1,35 +1,51 @@
-<html>
-  <head>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
-    <script src="https://cdn.jsdelivr.net/npm/posenet-similarity/dist/posenet-similarity.min.js"></script>
- </head>
+<!DOCTYPE html>
+<html lang="en">
 
-  <body>
-    <img id='pose1' src='https://i.imgur.com/Ksi02gA.jpg' crossorigin="anonymous"/>
-    <img id='pose2' src='https://i.imgur.com/94jenbn.jpg' crossorigin="anonymous"/>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Yoga Trainer</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon-16x16.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178448067-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-178448067-1');
+    </script>
+</head>
 
-  <script>
-    var pose1ImageElement = document.getElementById('pose1');
-    var pose2ImageElement = document.getElementById('pose2');
-    console.log(pose1ImageElement)
-    console.log(pose2ImageElement)
-    posenet.load().then(function(net) {
-      return Promise.all([
-        net.estimateSinglePose(pose1ImageElement),
-        net.estimateSinglePose(pose2ImageElement)
-      ])
-    }).then(function(poses){
-      var weightedDistance = pns.poseSimilarity(poses[0], poses[1], { strategy: 'weightedDistance' });
-      var cosineDistance = pns.poseSimilarity(poses[0], poses[1], { strategy: 'cosineDistance' });
-      var cosineSimilarity = pns.poseSimilarity(poses[0], poses[1], { strategy: 'cosineSimilarity' });
-      console.log("weightedDistance is:")
-      console.log(weightedDistance)
-      console.log("cosineDistance is:")
-      console.log(cosineDistance)
-      console.log("cosineSimilarity is:")
-      console.log(cosineSimilarity)
-    })
-  </script>
+<body class="bg-gray-100 text-gray-800 font-sans">
+    <!-- Header -->
+    <h1 class="text-center text-7xl font-extrabold mt-16 mb-4 px-6">
+        Welcome to AI Yoga Trainer
+    </h1>
+
+    <!-- Images -->
+    <div class="relative flex justify-center">
+        <img src="imgs/yoga 1.svg" class="w-3/5 max-w-lg" alt="Yoga Pose">
+        <img src="imgs/sparkles.svg" class="absolute top-12 right-40 w-36 h-36" alt="Sparkles">
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex flex-col items-center mt-16 space-y-8">
+        <a href="instructionsLearn.html" class="bg-orange-900 text-white text-xl font-medium px-8 py-4 rounded-md shadow-lg hover:bg-orange-200 hover:text-black transition">
+            Learn
+        </a>
+        <a href="instructionsPractice.html" class="bg-rose-700 text-white text-xl font-medium px-8 py-4 rounded-md shadow-lg hover:bg-orange-200 hover:text-black transition">
+            Practice
+        </a>
+        <a href="about.html" class="bg-gray-800 text-white text-xl font-medium px-8 py-4 rounded-md shadow-lg hover:bg-orange-200 hover:text-black transition">
+            About AI Yoga Trainer
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full text-center text-sm text-gray-600 mt-12 pb-4">
+      &copy; Copyright 2020. By Siddharth Kale. All rights reserved.
+  </footer>
+</body>
+
 </html>

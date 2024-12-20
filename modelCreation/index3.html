@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
+    <script src="https://cdn.jsdelivr.net/npm/posenet-similarity/dist/posenet-similarity.min.js"></script>
+ </head>
+
+  <body>
+    <img id='pose1' src='https://i.imgur.com/Ksi02gA.jpg' crossorigin="anonymous"/>
+    <img id='pose2' src='https://i.imgur.com/4BMkMSe.jpg' crossorigin="anonymous"/>
+  </body>
+
+  <script>
+    var pose1ImageElement = document.getElementById('pose1');
+    var pose2ImageElement = document.getElementById('pose2');
+    console.log(pose1ImageElement)
+    console.log(pose2ImageElement)
+    posenet.load().then(function(net) {
+      return Promise.all([
+        net.estimateSinglePose(pose1ImageElement),
+        net.estimateSinglePose(pose2ImageElement)
+      ])
+    }).then(function(poses){
+      var weightedDistance = pns.poseSimilarity(poses[0], poses[1], { strategy: 'weightedDistance' });
+      var cosineDistance = pns.poseSimilarity(poses[0], poses[1], { strategy: 'cosineDistance' });
+      var cosineSimilarity = pns.poseSimilarity(poses[0], poses[1], { strategy: 'cosineSimilarity' });
+      console.log("weightedDistance is:")
+      console.log(weightedDistance)
+      console.log("cosineDistance is:")
+      console.log(cosineDistance)
+      console.log("cosineSimilarity is:")
+      console.log(cosineSimilarity)
+    })
+  </script>
+</html>
